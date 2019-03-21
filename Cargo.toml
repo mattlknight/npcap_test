@@ -1,0 +1,12 @@
+[package]
+name = "npcap_test"
+version = "0.1.0"
+authors = ["Matthew Knight <mattlknight@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+dotenv = "*"
+env_logger = "*"
+log = "*"
+# npcap_sys = { git = "https://github.com/mattlknight/npcap_sys" }
+npcap_sys = { path = "../npcap_sys" }
