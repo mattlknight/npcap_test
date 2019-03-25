@@ -15,8 +15,9 @@ fn main() -> Result<(), Box<std::error::Error>> {
     debug!("Pcap::new()");
     let mut pcap = Pcap::new();
     let devices = pcap.get_device_list()?;
+    println!("Devices Found:");
     for device in devices.iter() {
-        debug!("device: {:?}", device);
+        println!("  {}", device);
     }
 
     debug!("main() -> OK");
