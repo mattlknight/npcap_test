@@ -1,12 +1,5 @@
 use npcap_sys::{Pcap};
 use log::debug;
-// use npcap_sys::pcap_freealldevs;
-// use log::{debug, error, info, trace};
-// use std::ffi::CStr;
-
-
-
-
 
 fn main() -> Result<(), Box<std::error::Error>> {
     dotenv::dotenv().ok();
@@ -14,7 +7,7 @@ fn main() -> Result<(), Box<std::error::Error>> {
 
     let mut pcap = Pcap::new();
     let devices = pcap.get_device_list()?;
-    println!("Devices Found:");
+    debug!("\nDevices Found:");
     for device in devices.iter() {
         println!("  {}", device);
     }
@@ -22,4 +15,3 @@ fn main() -> Result<(), Box<std::error::Error>> {
     debug!("main() -> OK");
     Ok(())
 }
-
