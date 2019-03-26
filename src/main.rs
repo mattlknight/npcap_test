@@ -12,7 +12,6 @@ fn main() -> Result<(), Box<std::error::Error>> {
     dotenv::dotenv().ok();
     env_logger::init();
 
-    debug!("Pcap::new()");
     let mut pcap = Pcap::new();
     let devices = pcap.get_device_list()?;
     println!("Devices Found:");
